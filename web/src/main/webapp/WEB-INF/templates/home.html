@@ -3,27 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>The generated source code Web Application for Sakai</title>
+    
+    <!-- 'head' fragment now includes Bootstrap Datepicker libraries -->
     <th:block th:include="fragments/head"></th:block>
 </head>
 <body>
 
-<!--     <div th:replace="~{fragments/header :: header}">Header</div> -->
+    <!-- Include the navigation fragment -->
     <th:block th:include="fragments/hnav"></th:block>
+    
     <div class="container">
         <div class="text-center">
-            <div class="lead">
-                <H1>Refer document at http://www.thymeleaf.org/doc/articles/layouts.html to make your own layout.</H1>
-            </div>
-            <div class="lead">Welcome to the generated source code Web Application for Sakai.</div>
+            <!-- ... (Your original H1, lead, and p tags) ... -->
 			<p>Login userId: <span th:text="${session.userDisplayName}"></span></p>
 			<p>Login Display Username: <span th:text="${session.userEid}"></span></p>
             <p>
                 <a id="signup" class="btn btn-info" role="button" href="https://myworkspace.vn/portal/site/intern-java">Sign up</a>
             </p>
         </div>
-        <div th:insert="~{fragments/footer :: footer}"></div>
+
+        <!-- ========== ADD: Datepicker Test Section ========== -->
+        <div class="container">
+		    <div class="text-center mt-4 p-4 border rounded" style="max-width: 400px; margin: auto;">
+		        <h4>Bootstrap Datepicker Test</h4>
+		        
+		        <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
+		        <div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
+		
+		        <form th:action="@{/}" th:object="${dateTestForm}" method="post">
+		            <div class="mb-3">
+		                <label for="datepicker-demo" class="form-label">Chọn ngày:</label>
+		                <input type="text"
+		                       class="form-control"
+		                       id="datepicker-demo"
+		                       th:field="*{testDate}" 
+		                       th:placeholder="${currentFormat}"> </div>
+		            <button type="submit" class="btn btn-primary">Gửi dữ liệu</button>
+		        </form>
+		    </div>
+		   </div>
+        <!-- ========== END: Datepicker Test Section ========== -->
+
+        <!-- Add margin-top to the footer -->
+        <div th:insert="~{fragments/footer :: footer}" class="mt-4"></div>
     </div>
-	<!-- Common -->
-    <th:block th:include="fragments/frg_about_dialog"></th:block>
+    
+	<!-- Common 
+    <th:block th:include="fragments/frg_about_dialog"></th:block>-->
+
+    <!-- ========== ADD: Datepicker Activation Script ========== -->
+    <script th:inline="javascript" type="text/javascript">
+        // Lấy các giá trị động từ Controller (Thymeleaf)
+        var jsFormat = /*[[${currentFormat}]]*/ 'dd/MM/yyyy';
+        var jsLocale = /*[[${currentLocale}]]*/ 'vi';
+        
+        // QUAN TRỌNG:
+        // Java dùng 'MM' cho tháng, nhưng datepicker (JS) dùng 'mm'.
+        var datepickerFormat = jsFormat.replace("MM", "mm");
+
+        $(document).ready(function() {
+            $('#datepicker-demo').datepicker({
+                format: datepickerFormat, // Dùng format động
+                language: jsLocale,       // Dùng ngôn ngữ động
+                autoclose: true,
+                todayHighlight: true
+            });
+        });
+    </script>
+    <!-- ========== END: Activation Script ========== -->
+
 </body>
 </html>
+

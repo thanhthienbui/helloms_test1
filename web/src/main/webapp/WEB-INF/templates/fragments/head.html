@@ -1,6 +1,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="/library/webjars/bootstrap/5.2.0/css/bootstrap.min.css">
 
+    <!-- ADD: Bootstrap Datepicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker3.min.css">
+
     <link rel="stylesheet" type="text/css" href="/library/skin/default-skin/tool.css">
 
     <!-- Determine the root context of the application.  -->
@@ -13,14 +16,20 @@
 
     </script>
 
-    <!-- jQuery library -->
+    <!-- jQuery library (loaded first) -->
     <script src="/library/webjars/jquery/1.12.4/jquery.min.js"></script>
     
-    <!-- Bootstrap library -->
+    <!-- Bootstrap library (loaded second) -->
     <script src="/library/webjars/bootstrap/5.2.0/js/bootstrap.min.js"></script>
+
+    <!-- ADD: Bootstrap Datepicker JS (and optional Vietnamese locale) -->
+    <!-- (Must be loaded AFTER jQuery) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/locales/bootstrap-datepicker.vi.min.js"></script>
 
     <!-- For Sakai only -->
     <script type="text/javascript" src="/library/js/headscripts.js"></script>
     
+    <!-- This file (about.js) is loaded here -->
     <script type="text/javascript" th:src="@{/resources/js/about.js}" ></script>
 

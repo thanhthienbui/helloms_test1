@@ -17,6 +17,11 @@
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>mks.myworkspace.assetm</groupId>
+			<artifactId>assetm-biz</artifactId>
+			<version>25.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<!-- configure the build to use the standard maven structure -->
