@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="hellomws-web-25.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <dependent-module archiveName="hellomws-api-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-api/hellomws-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hellomws-common-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-common/hellomws-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hellomws-controller-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-controller/hellomws-controller">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hellomws-impl-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-impl/hellomws-impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hellomws-jpa-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-jpa/hellomws-jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="assetm-biz-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/assetm-biz/assetm-biz">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="assetm-common-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/assetm-common/assetm-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="assetm-api-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/assetm-api/assetm-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="assetm-jpa-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/assetm-jpa/assetm-jpa">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="hellomws-biz-25.0.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/hellomws-biz/hellomws-biz">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="hellomws-web"/>
+        <property name="java-output-path" value="/hellomws-web/target/classes"/>
+    </wb-module>
+</project-modules>
