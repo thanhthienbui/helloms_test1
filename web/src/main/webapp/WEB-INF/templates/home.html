@@ -25,6 +25,8 @@
 		        <h4>Bootstrap Datepicker Test</h4>
 		        
 		        <div th:if="${successMessage}" class="alert alert-success" th:text="${successMessage}"></div>
+		        <!--format ngày đang sử dụng là gì-->
+		        <!--Ngày mà server nhận được theo format:-->
 		        <div th:if="${errorMessage}" class="alert alert-danger" th:text="${errorMessage}"></div>
 		
 		        <form th:action="@{/}" th:object="${dateTestForm}" method="post">

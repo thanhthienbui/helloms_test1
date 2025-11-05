@@ -67,11 +67,14 @@ public class HelloController extends BaseController {
 
         log.info(">>>> [DYNAMIC TEST] Successfully parsed date: " + parsedDate);
 
+        Locale currentLocale = LocaleContextHolder.getLocale();
         
         if (parsedDate != null) {
+        	
+        	String formattedDate = dateFormatter.print(parsedDate, currentLocale);
             // 2. Gửi thông báo thành công ra frontend
             redirectAttributes.addFlashAttribute("successMessage",
-                "SUCCESS! Server parsed date: " + parsedDate.toString());
+                "SUCCESS! Server parsed date: " + formattedDate);
         } else {
             // 3. Gửi thông báo lỗi ra frontend
             redirectAttributes.addFlashAttribute("errorMessage",
